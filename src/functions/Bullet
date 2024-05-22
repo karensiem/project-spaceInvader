@@ -1,0 +1,37 @@
+import java.awt.Color;
+
+
+public class Bullet {
+
+    public static final int x_size = 5;
+
+    public static final int y_size = 10;
+
+    public static final int direction = -3;
+
+    public static final Color color = new Color(255, 255, 255);
+
+    private int x;
+
+    private int y;
+
+    // x, y are coordinates at which the bullet is positioned
+    public Bullet(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    //updates the movement of the bullets
+    public void update() {
+        y = y + direction;
+    }
+
+}
