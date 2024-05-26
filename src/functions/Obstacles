@@ -1,3 +1,6 @@
+package functions;
+
+import java.awt.Color;
 public class Obstacles {
     public static final int x_size = 5;
 

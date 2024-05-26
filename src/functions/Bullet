@@ -1,3 +1,4 @@
+package functions;
 import java.awt.Color;
 
 
@@ -7,7 +8,7 @@ public class Bullet {
 
     public static final int y_size = 10;
 
-    public static final int direction = -3;
+    public static final int tempo = -3;
 
     public static final Color color = new Color(255, 255, 255);
 
@@ -31,7 +32,7 @@ public class Bullet {
 
     //updates the movement of the bullets
     public void update() {
-        y = y + direction;
+        y = y + tempo;
     }
 
 }
