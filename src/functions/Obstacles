@@ -1,15 +1,46 @@
 package functions;
 
-import java.awt.Color;
+import java.awt.*;
+import java.awt.Rectangle;
+
 public class Obstacles {
     public static final int x_size = 5;
 
     public static final int y_size = 10;
 
-    public static final int direction = -3;
+    public static final int tempo = 2;
 
     public static final Color color = new Color(255, 255, 255);
-    
+
+    private int x;
+
+    private int y;
+
+    public Obstacles(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    int getX() {
+        return x;
+    }
+
+    int getY() {
+        return y;
+    }
+
+    // return true if bullet collided with the obstacle
+    boolean isAttacked(Bullet m) {
+        Rectangle invaderBoundingRect = new Rectangle(getX() - x_size / 2, getY() - y_size / 2, x_size, y_size);
+        Rectangle missileBoundingRect = new Rectangle(m.getX() - Bullet.x_size / 2, m.getY() - Bullet.y_size/ 2,
+                Bullet.x_size, Bullet.y_size);
+        return invaderBoundingRect.intersects(missileBoundingRect);
+    }
+
+    void fall() {
+        y = y + tempo;
+    }
+
 
 
 }
